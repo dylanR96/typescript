@@ -1,0 +1,36 @@
+let id: string = '5'
+    let company: string = 'My company'
+
+    function hello(a: string, b: string): string {
+        return a + b
+    }
+
+    interface UserInterface {
+        id: number
+        name: string
+        age?: number //age? will be undefined if no value is given when called
+        greet(message: string): void //Return type is void if function does not return anything
+    }
+
+    const User: UserInterface = {
+        id: 2,
+        name: 'John',
+        greet(message) {
+            console.log(message)
+        }
+    }
+
+    hello(id, company)
+
+    const printID = (id: string | number) => {
+        console.log('ID: ' + id)
+    }
+    printID('2adsad222344')
+    printID(5555)
+
+    type IDFieldType = string | number
+    const printID2 = (id: IDFieldType) => {
+        console.log('ID: ' + id)
+    }
+    printID2('2adsad222344')
+    printID2(5555)
