@@ -1,9 +1,9 @@
-import { Person } from './components/Person'
+import { User } from './components/Person'
 
 function App() {
     return (
         <>
-            <Person name={'pedro'} age={22} isMarried={false} />
+            <User name={'pedro'} age={22} isMarried={false} />
         </>
     )
 }
