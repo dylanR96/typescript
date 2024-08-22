@@ -1,4 +1,4 @@
-import { createContext } from 'react'
+import { createContext, useEffect, useState } from 'react'
 
 export interface User {
     name: string
@@ -20,4 +20,29 @@ const contextInitialValues = {
     deleteUser: () => null
 }
 
-const UserContext = createContext<UserContextType>()
+export const UserContext = createContext<UserContextType>(contextInitialValues)
+
+interface Props {
+    children: React.ReactNode
+}
+
+export const UserProvider = (props: Props) => {
+    const [users, setUsers] = useState<User[] | null>(null)
+
+    useEffect(() => {
+        setUsers([{ name: 'Pedro', age: 22, isMarried: false }])
+    }, [])
+
+    const addUser = (user: User) => null
+    const updateUser = (id: string) => null
+    const deleteUser = (id: string) => null
+
+    return (
+        <UserContext.Provider
+            value={{ users, addUser, updateUser, deleteUser }}
+        >
+            {' '}
+            {props.children}
+        </UserContext.Provider>
+    )
+}
