@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { UserContext } from '../UserContextProvider'
 
 interface Props {
     name: string
@@ -7,20 +8,23 @@ interface Props {
 }
 
 export const User = (props: Props) => {
-    const [personBio, setPersonBio] = useState<string | null>(null)
+    // const [personBio, setPersonBio] = useState<string | null>(null)
 
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPersonBio(event.target.value)
-    }
+    // const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    //     setPersonBio(event.target.value)
+    // }
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-    }
+    // const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    //     event.preventDefault()
+    // }
     // const [isShowInfo, setShowInfo] = useState<boolean>(false)
 
     // const toggleInfo = () => {
     //     setShowInfo(prev => !prev)
     // }
+
+    // const { updateUser, addUser, deleteUser, users } = useContext(UserContext)
+
     return (
         <div>
             {/* {isShowInfo && ( */}
